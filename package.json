@@ -11,9 +11,10 @@
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
-    "start":"nodemon app.js"
+    "start": "nodemon app.js"
   },
   "dependencies": {
+    "ejs": "^4.0.1",
     "express": "^5.2.1"
   },
   "devDependencies": {
