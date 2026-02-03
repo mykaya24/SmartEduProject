@@ -11,20 +11,20 @@ const UserSchema = new Schema({
   email: {
     type: String,
     require: true,
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
-    require: true
-  }
+    require: true,
+  },
 });
 
 UserSchema.pre('save', async function () {
-    const user = this;
-    if (!user.isModified('password')) return;
-    const hash = await bcrypt.hash(user.password, 10);
-    user.password = hash;
-  });
+  const user = this;
+  if (!user.isModified('password')) return;
+  const hash = await bcrypt.hash(user.password, 10);
+  user.password = hash;
+});
 
 const User = mongoose.model('User', UserSchema);
 
