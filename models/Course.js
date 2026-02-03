@@ -23,6 +23,10 @@ const CourseSchema = new Schema({
     default: function(){
       return slugify(this.name,{lower:true,strict:true});
     }
+  },
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Category',
   }
 });
 
