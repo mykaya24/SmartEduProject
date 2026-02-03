@@ -24,9 +24,9 @@ exports.getAllCourses = async (req, res) => {
     if (categorySlug) {
       filter = { "category": category._id };
     }
-    console.log(filter.category);
+    //console.log(filter.category);
     const courses = await Course.find(filter);
-    console.log(courses);
+    //console.log(courses);
     const categories = await Category.find();
 
     res.status(200).render('courses', {

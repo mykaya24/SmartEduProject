@@ -4,6 +4,7 @@ exports.getAboutPage = (req, res) => {
   });
 };
 exports.getIndexPage = (req, res) => {
+  console.log(req.session.userID);
   res.render('index', {
     page_name: 'index',
   });
